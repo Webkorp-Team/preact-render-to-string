@@ -262,9 +262,9 @@ function _renderToString(vnode, context, opts, inner, isSvgMode, selectValue) {
 				v = styleObjToCss(v);
 			}
 
-			// always use string values instead of booleans for aria attributes
-			// also see https://github.com/preactjs/preact/pull/2347/files
-			if (name[0] === 'a' && name['1'] === 'r' && typeof v === 'boolean') {
+			// always use string values instead of booleans for aria and data attributes
+			// see https://github.com/preactjs/preact/pull/2347/files (discu
+			if((name.startsWith('aria-')||name.startsWith('data-')) && typeof v === 'boolean') {
 				v = String(v);
 			}
 
