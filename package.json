@@ -33,6 +33,7 @@
 		"test:mocha": "BABEL_ENV=test mocha -r @babel/register -r test/setup.js test/**/*.test.js",
 		"format": "prettier src/**/*.{d.ts,js} test/**/*.js --write",
 		"prepublishOnly": "npm run build",
+		"prepare": "npm run build",
 		"release": "npm run build && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
 	},
 	"keywords": [
